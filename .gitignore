@@ -38,5 +38,6 @@ bin/
 .DS_Store
 /target/
 /.idea/
+/reports/
 application.log
 solvd-laba-test-automation.iml
