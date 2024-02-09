@@ -26,6 +26,7 @@ public class HomePageTest extends AbstractTest {
 
 
         SearchLineComponent searchLineComponent = page.getHeader().getSearchLineComponent();
+
         System.out.println();
 
 
