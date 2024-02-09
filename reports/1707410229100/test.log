@@ -1,0 +1,18 @@
+[2024-02-08 04:37:09] [1] [INFO] 
+============= Basic configuration =============
+env=PROD
+=========== WebDriver configuration ===========
+browser=chrome
+selenium_url=http://localhost:4444/wd/hub
+-------------- Driver capabilities ------------
+===============================================
+
+[2024-02-08 04:37:09] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-02-08 04:37:15] [1] [INFO] [TestNG] Running:
+  /Users/zee/Library/Caches/JetBrains/IntelliJIdea2022.2/temp-testng-customsuite.xml
+
+[2024-02-08 04:37:15] [1] [INFO] Set thread-count=1
+[2024-02-08 04:37:15] [1] [INFO] Set data-provider-thread-count=1
+[2024-02-08 04:37:15] [1] [INFO] CARINA_CORE_VERSION: 1.2.6
+[2024-02-08 04:37:25] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2024-02-08 04:37:25] [1] [INFO] RESULT #1: TEST [solvd-laba-test-automation - verifySearchLineTest] PASS [log=file:///Users/zee/Desktop/solvd-laba-test-automation/reports/1707410229100/2621adf6-c126-463c-ab7a-9d0bb3457990/test.log]

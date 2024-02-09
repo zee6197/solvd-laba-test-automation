@@ -1,0 +1,6 @@
+[2024-02-08 04:34:07] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-02-08 04:34:07] [1] [INFO] TEST [solvd-laba-test-automation - verifySearchLineTest] STARTED at [08:34:07 2024-02-08]
+[2024-02-08 04:34:07] [1] [INFO] Starting driver session...
+[2024-02-08 04:34:27] [1] [INFO] Driver session started.
+[2024-02-08 04:34:27] [1] [INFO] INFO: opening url 'https://www.amazon.com'
+[2024-02-08 04:35:01] [1] [INFO] TEST [solvd-laba-test-automation - verifySearchLineTest] PASSED at [08:35:01 2024-02-08]

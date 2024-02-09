@@ -1,0 +1,6 @@
+
+{
+  "score": "${score}",
+  "title": "${title}",
+  "body": "${body}"
+}

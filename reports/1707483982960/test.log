@@ -1,0 +1,138 @@
+[2024-02-09 01:06:22] [1] [INFO] [TestNG] Running:
+  /Users/zee/Library/Caches/JetBrains/IntelliJIdea2022.2/temp-testng-customsuite.xml
+
+[2024-02-09 01:06:24] [1] [INFO] Request method:	POST
+Request URI:	https://jsonplaceholder.typicode.com/posts
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+Cookies:		<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Body:
+{
+    "score": "5",
+    "title": "This is my first post",
+    "body": "Hello Zee"
+}
+HTTP/1.1 201 Created
+Date: Fri, 09 Feb 2024 13:06:24 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 90
+Connection: keep-alive
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1707483984&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=urIoq4PJetWroZMWa544eT%2F6xEnv%2BW6Z5M4Bgm6tMxM%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1707483984&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=urIoq4PJetWroZMWa544eT%2F6xEnv%2BW6Z5M4Bgm6tMxM%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+X-Powered-By: Express
+X-Ratelimit-Limit: 1000
+X-Ratelimit-Remaining: 999
+X-Ratelimit-Reset: 1707483994
+Vary: Origin, X-HTTP-Method-Override, Accept-Encoding
+Access-Control-Allow-Credentials: true
+Cache-Control: no-cache
+Pragma: no-cache
+Expires: -1
+Access-Control-Expose-Headers: Location
+Location: https://jsonplaceholder.typicode.com/posts/101
+X-Content-Type-Options: nosniff
+Etag: W/"5a-vII6d+njMCBF1mhCmyfAXxExRCk"
+Via: 1.1 vegur
+CF-Cache-Status: DYNAMIC
+Server: cloudflare
+CF-RAY: 852c54583f9f97ff-SJC
+alt-svc: h3=":443"; ma=86400
+
+{
+    "score": "5",
+    "title": "This is my first post",
+    "body": "Hello Zee",
+    "id": 101
+}
+
+[2024-02-09 01:06:25] [1] [INFO] Request method:	DELETE
+Request URI:	https://jsonplaceholder.typicode.com/posts/1
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+Cookies:		<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Fri, 09 Feb 2024 13:06:25 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 2
+Connection: keep-alive
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1707483985&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=TCnGNsiYb%2F7vy7xPfTlVR6aK8NGDG6%2B9IvKWy%2BFiapM%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1707483985&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=TCnGNsiYb%2F7vy7xPfTlVR6aK8NGDG6%2B9IvKWy%2BFiapM%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+X-Powered-By: Express
+X-Ratelimit-Limit: 1000
+X-Ratelimit-Remaining: 998
+X-Ratelimit-Reset: 1707483994
+Vary: Origin, Accept-Encoding
+Access-Control-Allow-Credentials: true
+Cache-Control: no-cache
+Pragma: no-cache
+Expires: -1
+X-Content-Type-Options: nosniff
+Etag: W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+Via: 1.1 vegur
+CF-Cache-Status: DYNAMIC
+Server: cloudflare
+CF-RAY: 852c545acfb817f2-SJC
+alt-svc: h3=":443"; ma=86400
+
+{
+    
+}
+
+[2024-02-09 01:06:25] [1] [INFO] Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/posts/1
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+Cookies:		<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Fri, 09 Feb 2024 13:06:25 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1703028168&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=yJ6haoFlpWvORnzsSQkqXv%2Fv1rggAa62Bi9QgoVrCrU%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1703028168&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=yJ6haoFlpWvORnzsSQkqXv%2Fv1rggAa62Bi9QgoVrCrU%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+X-Powered-By: Express
+X-Ratelimit-Limit: 1000
+X-Ratelimit-Remaining: 999
+X-Ratelimit-Reset: 1703028213
+Vary: Origin, Accept-Encoding
+Access-Control-Allow-Credentials: true
+Cache-Control: max-age=43200
+Pragma: no-cache
+Expires: -1
+X-Content-Type-Options: nosniff
+Etag: W/"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU"
+Via: 1.1 vegur
+CF-Cache-Status: HIT
+Age: 20076
+Server: cloudflare
+CF-RAY: 852c545d1f009e4d-SJC
+Content-Encoding: gzip
+alt-svc: h3=":443"; ma=86400
+
+{
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+}
+
