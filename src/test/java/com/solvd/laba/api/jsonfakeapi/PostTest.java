@@ -14,7 +14,12 @@ public class PostTest {
     @DataProvider(name = "postDataProvider")
     public Object[][] providePostData() {
         return new Object[][]{
-                {1, 5, "This is my first post", "Hello Zee"},
+                {1, 6, "This is my first post", "Hello Zee"},
+                {1, 9, "This is my second post", "I am practicing Api testing"},
+                {1, 10, "This is my third post", "I am getting better at it"},
+                {1, 8, "This is my fourth post", "I am practicing Api testing"},
+                {1, 7, "This is my fifth post", "I am practicing Api testing again"},
+                {1, 5, "This is my sixth post", "Thank you reading! Good Bye!"},
         };
     }
 
@@ -81,7 +86,5 @@ public class PostTest {
         UpdatePost updatePostMethod = new UpdatePost(id);
         updatePostMethod.callAPI();
         updatePostMethod.validateResponse();
-
-
     }
 }
