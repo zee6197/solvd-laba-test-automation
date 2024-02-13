@@ -1,6 +1,6 @@
-package com.solvd.laba.web;
+package com.solvd.laba.web.amazon.pages;
 
-import com.solvd.laba.web.components.ProductCard;
+import com.solvd.laba.web.amazon.components.ProductCard;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;

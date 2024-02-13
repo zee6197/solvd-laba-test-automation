@@ -1,6 +1,6 @@
-package com.solvd.laba.web.components;
+package com.solvd.laba.web.amazon.components;
 
-import com.solvd.laba.web.SearchPage;
+import com.solvd.laba.web.amazon.pages.SearchPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 

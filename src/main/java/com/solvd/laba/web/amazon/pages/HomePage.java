@@ -1,6 +1,6 @@
-package com.solvd.laba.web;
+package com.solvd.laba.web.amazon.pages;
 
-import com.solvd.laba.web.components.Header;
+import com.solvd.laba.web.amazon.components.Header;
 import com.zebrunner.carina.utils.config.Configuration;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 
@@ -13,15 +13,15 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = "//header")
     private Header header;
 
-    public HomePage(WebDriver driver) {
-        super(driver);
+    public HomePage(WebDriver driverAmz) {
+        super(driverAmz);
 //        setPageURL("/");
-//        setPageAbsoluteURL(Configuration.getRequired("home_url"));
+//        setPageAbsoluteURL(Configuration.getRequired("amazon_home_url"));
     }
 
     @Override
     public void open() {
-        openURL(Configuration.getRequired("home_url"));
+        openURL(Configuration.getRequired("amazon_home_url"));
     }
 
     public Header getHeader() {
