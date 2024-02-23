@@ -3,18 +3,19 @@ package com.solvd.laba.web.underarmour.pages;
 import com.solvd.laba.web.underarmour.components.Header;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import com.zebrunner.carina.utils.config.Configuration;
-import com.zebrunner.carina.webdriver.gui.AbstractPage;
 
+public class HomePage extends UnderArmourAbstractPage {
 
-public class HomePage extends AbstractPage {
-
-    private WebDriver driver;
     private Header header;
 
-    @FindBy(xpath = "//*[@id=\"menu\"]/li[2]/a")
+
+    // TODO: 1st Test Feedback: Good practice to create the whole navigation bar using ENUM and then test the navigation bar using the ENUM!
+    // TODO: xpath locator for whole navigation bar: //*[@role='menuitem']/a & use List of ExtendedWebElement!
+    @FindBy(xpath = "//*[@id='menu']/li[2]/a")
     private ExtendedWebElement mensSectionButton;
 
     @FindBy(xpath = "//a[contains(@class, 'HeaderUtility_header-account-link') and contains(text(), 'Need Help?')]")
@@ -23,8 +24,13 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = ".//a[contains(@class, 'Header_nav-icon-bag')]")
     private ExtendedWebElement shoppingCartIcon;
 
+    @FindBy(xpath = "//input[@id='search-input']")
+    private ExtendedWebElement searchInput;
+
+
 
     public HomePage(WebDriver driver) {
+
         super(driver);
     }
 
@@ -48,12 +54,17 @@ public class HomePage extends AbstractPage {
 
     public ShoppingCartPage clickOnShoppingCartIcon() {
         shoppingCartIcon.click();
-        return new ShoppingCartPage(driver);
+        return new ShoppingCartPage(getDriver());
+    }
+
+    public void enterSearchTermAndSubmit(String searchTerm) {
+        searchInput.type(searchTerm);
+        searchInput.sendKeys(Keys.ENTER);
     }
 
     public String getCurrentURL() {
 
-        return driver.getCurrentUrl();
+        return getDriver().getCurrentUrl();
     }
 
     public Header getHeader() {

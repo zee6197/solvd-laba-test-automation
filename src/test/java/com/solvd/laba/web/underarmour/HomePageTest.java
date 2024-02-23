@@ -4,37 +4,34 @@ import com.solvd.laba.web.underarmour.pages.HomePage;
 import com.solvd.laba.web.underarmour.pages.MensSectionPage;
 import com.solvd.laba.web.underarmour.pages.ShoppingCartPage;
 import com.zebrunner.carina.core.AbstractTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import java.time.Duration;
 import java.util.ArrayList;
 
 
 public class HomePageTest extends AbstractTest {
 
+
+    // TODO: Feedback: Good practice to create the whole navigation bar using ENUM and then test the navigation bar using the ENUM!
+    // TODO: Practice: Look for more abstraction in tests and create abstraction layer as needed
     @Test
     public void verifyNavigationToMensSection() {
 
         SoftAssert sa = new SoftAssert();
         WebDriver driver = getDriver();
         HomePage homePage = new HomePage(driver);
-
         homePage.open();
         MensSectionPage page = homePage.clickOnMensSection();
 
+        // TODO: feedback: also include this in ENUM and include the header text to test
         String expectedUrl = "https://www.underarmour.com/en-us/c/mens/";
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.urlToBe(expectedUrl));
-
+        homePage.waitSpinner().until(ExpectedConditions.urlToBe(expectedUrl));
         String currentURL = driver.getCurrentUrl();
         sa.assertEquals(currentURL, expectedUrl, "The current URL should be the Men's section URL.");
+
         sa.assertAll();
     }
 
@@ -44,14 +41,11 @@ public class HomePageTest extends AbstractTest {
         SoftAssert sa = new SoftAssert();
         WebDriver driver = getDriver();
         HomePage homePage = new HomePage(driver);
-
         homePage.open();
+
         String searchTerm = "shoes";
-        WebElement searchInput = driver.findElement(By.id("search-input"));
-        searchInput.sendKeys(searchTerm);
-        searchInput.sendKeys(Keys.ENTER);
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.urlContains(searchTerm));
+        homePage.enterSearchTermAndSubmit(searchTerm);
+        homePage.waitSpinner().until(ExpectedConditions.urlContains(searchTerm));
         String currentURL = driver.getCurrentUrl();
         sa.assertTrue(currentURL.contains(searchTerm), "The URL should contain the search term.");
 
@@ -64,20 +58,22 @@ public class HomePageTest extends AbstractTest {
         SoftAssert sa = new SoftAssert();
         WebDriver driver = getDriver();
         HomePage homePage = new HomePage(driver);
-
         homePage.open();
         homePage.clickOnNeedHelp();
-        new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.numberOfWindowsToBe(2));
 
+        homePage.waitSpinner().until(ExpectedConditions.numberOfWindowsToBe(2));
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        // switch to the second tab
         driver.switchTo().window(tabs.get(1));
-
         String expectedUrl = "https://help.underarmour.com/s/";
-        new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.urlToBe(expectedUrl));
+        homePage.waitSpinner().until(ExpectedConditions.urlToBe(expectedUrl));
         String currentURL = driver.getCurrentUrl();
         sa.assertEquals(currentURL, expectedUrl, "The current URL should be the help page's URL.");
+
+        // close the second tab
+        driver.close();
+        // switch to the first tab
+        driver.switchTo().window(tabs.get(0));
 
         sa.assertAll();
     }
@@ -89,14 +85,12 @@ public class HomePageTest extends AbstractTest {
         WebDriver driver = getDriver();
         HomePage homePage = new HomePage(driver);
         homePage.open();
-
         ShoppingCartPage shoppingCartPage = homePage.clickOnShoppingCartIcon();
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(By.cssSelector("[data-testid='user-action-close']")))
-                .click();
-        WebElement yourBagTitle = driver.findElement(By.cssSelector("span.Cart_cart-title__DWz30"));
+
+        shoppingCartPage.waitSpinner();
+        shoppingCartPage.closeDialogIfPresent();
         String expectedTitleText = "Your Bag";
-        String actualTitleText = yourBagTitle.getText().trim();
+        String actualTitleText = shoppingCartPage.getYourBagTitleText();
         sa.assertTrue(actualTitleText.equals(expectedTitleText), "The cart title should be '" + expectedTitleText + "'.");
 
         sa.assertAll();
